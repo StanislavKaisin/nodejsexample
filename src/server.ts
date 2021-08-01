@@ -39,3 +39,12 @@ router.use((req, res, next) => {
     return res.status(200).json({});
   }
 });
+
+//**Routes */
+/**Error handling */
+router.use((req, res, next) => {
+  const error = new Error('not found');
+  return res.status(404).json({
+    message: error.message,
+  });
+});
